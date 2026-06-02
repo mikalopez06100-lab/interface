@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "extract:images": "node scripts/extract-base64-images.mjs"
   },
   "dependencies": {
     "react": "^18",

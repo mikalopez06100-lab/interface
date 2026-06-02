@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InterFace - Site statique Next.js
 
-## Getting Started
+Migration technique des maquettes HTML vers un site Next.js 14 (App Router), avec routes propres, SEO technique, extraction des images base64 et câblage des leads.
 
-First, run the development server:
+## Stack
+
+- Next.js 14 (App Router) + TypeScript
+- CSS des maquettes conservé
+- `next/font` : Fraunces + Instrument Sans
+
+## Routes
+
+- `/` (Accueil)
+- `/offre`
+- `/professionnels`
+- `/estimation`
+- `/actualites`
+- `/actualites/surelevation-maison-cote-azur`
+- `/mentions-legales`
+- `/politique-confidentialite`
+
+## Configuration
+
+Copier `.env.example` vers `.env.local` puis renseigner :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+LEAD_WEBHOOK_URL=...
+NEXT_PUBLIC_SITE_URL=https://votre-domaine-preprod.vercel.app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Commandes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run extract:images
+npm run dev
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Leads (contact + simulateur)
 
-## Learn More
+- Endpoint interne : `POST /api/lead`
+- Le serveur relaie le payload vers `LEAD_WEBHOOK_URL` (Make/Brevo/Supabase)
+- Aucune clé API n'est exposée côté client
 
-To learn more about Next.js, take a look at the following resources:
+## SEO technique
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- JSON-LD FAQ + Article conservés depuis les maquettes
+- JSON-LD `LocalBusiness` global injecté dans `app/layout.tsx`
+- Metadata par page : title, description, canonical, Open Graph, Twitter
+- `sitemap.xml` et `robots.txt` générés via `app/sitemap.ts` et `app/robots.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Sources maquettes
 
-## Deploy on Vercel
+- Fichiers bruts : `source-html/`
+- Fichiers traités (liens internes + images externalisées) : `source-html-processed/`
+- Images extraites : `public/images/extracted/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Les placeholders `[ ... ]` demandés par le brief sont conservés.
+- Les ratios simulateur sont centralisés dans `config/estimation.ts`.
+- Les placeholders légaux/commerciaux sont centralisés dans `config/site.ts`.
