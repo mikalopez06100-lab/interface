@@ -195,6 +195,22 @@ export const SITE_UX_CSS = `
   width: auto;
   margin: 0 auto;
 }
+
+/* ——— Hero — filtre sur l'image de fond ——— */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.45);
+  z-index: 1;
+}
+.hero-bg::after {
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(10, 37, 64, 0.72) 0%, rgba(10, 37, 64, 0.28) 58%, rgba(10, 37, 64, 0.18) 100%),
+    linear-gradient(180deg, rgba(10, 37, 64, 0.78) 0%, rgba(10, 37, 64, 0.48) 40%, rgba(10, 37, 64, 0.96) 100%);
+}
+
 /* ——— Ancres & sections ——— */
 #faq,
 #contact,
