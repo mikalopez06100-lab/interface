@@ -25,7 +25,7 @@ const projects = [
       {
         src: "c__Users_ppmpc_AppData_Roaming_Cursor_User_workspaceStorage_6fbe03be795d84c19e70204b9227af9b_images_IMG_0789-a5505363-bc6d-4411-8c57-14ec156d04ca.png",
         out: "04-piscine-interieure.jpg",
-        rotate: -90,
+        rotate: 90,
       },
       {
         src: "c__Users_ppmpc_AppData_Roaming_Cursor_User_workspaceStorage_6fbe03be795d84c19e70204b9227af9b_images_IMG_0985-657f2c94-4ba7-4b91-a221-da1ceb8a27f6.png",
