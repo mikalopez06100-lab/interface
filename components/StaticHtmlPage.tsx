@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { loadStaticHtmlDocument } from "@/lib/static-html";
+import { SITE_UX_CSS } from "@/lib/site-ux";
 
 type Props = {
   fileName: string;
@@ -13,6 +14,7 @@ export async function StaticHtmlPage({ fileName }: Props) {
       {doc.styles.map((style, index) => (
         <style key={`style-${index}`} dangerouslySetInnerHTML={{ __html: style }} />
       ))}
+      <style dangerouslySetInnerHTML={{ __html: SITE_UX_CSS }} />
       {doc.jsonLd.map((schema, index) => (
         <Script
           key={`jsonld-${index}`}

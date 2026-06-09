@@ -9,6 +9,7 @@ import {
   MULT_STANDING,
   MULT_ZONE,
 } from "@/config/estimation";
+import { appendSiteUxScript } from "@/lib/site-ux";
 
 const ROOT = process.cwd();
 const SOURCE_DIR = path.join(ROOT, "source-html-processed");
@@ -129,7 +130,34 @@ if(contactBtn){
     ];
   }
 
-  return nextScripts;
+  return appendSiteUxScript(nextScripts);
+};
+
+const faqNavTargets: Record<string, string> = {
+  "offre-interface.html": "offre-interface.html#faq",
+  "article-interface.html": "article-interface.html#faq",
+};
+
+const injectFaqNavLink = (bodyHtml: string, fileName: string) => {
+  if (bodyHtml.includes(">FAQ</a>")) return bodyHtml;
+  const faqHref = faqNavTargets[fileName] ?? "landing-interface.html#faq";
+  return bodyHtml.replace(
+    /(<nav class="nav"[^>]*>[\s\S]*?)(<a href="[^"]*#actualites"[^>]*>Actualités<\/a>)/,
+    `$1<a href="${faqHref}">FAQ</a>$2`
+  );
+};
+
+const dedupeOffreFaq = (bodyHtml: string) => {
+  const seen = new Set<string>();
+  return bodyHtml.replace(
+    /<div class="faq-item rv"[^>]*><button class="faq-q">([\s\S]*?)<\/button><div class="faq-a">([\s\S]*?)<\/div><\/div>/g,
+    (match, question: string) => {
+      const key = question.trim();
+      if (seen.has(key)) return "";
+      seen.add(key);
+      return match;
+    }
+  );
 };
 
 const extractMatches = (source: string, pattern: RegExp, group = 1) => {
@@ -167,8 +195,16 @@ export const loadStaticHtmlDocument = async (
     /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi
   );
   let bodyHtml = rewriteLinks(extractOne(raw, /<body[^>]*>([\s\S]*?)<\/body>/i));
+  bodyHtml = injectFaqNavLink(bodyHtml, fileName);
   if (fileName === "landing-interface.html") {
     bodyHtml = injectContactFormEnhancements(bodyHtml);
+  }
+  if (fileName === "offre-interface.html") {
+    bodyHtml = dedupeOffreFaq(bodyHtml);
+    bodyHtml = bodyHtml.replace(
+      "Construction, rénovation, niveaux d'engagement, systèmes constructifs : les réponses aux questions les plus fréquentes.",
+      "Construction, rénovation, systèmes constructifs et accompagnement : les réponses aux questions les plus fréquentes."
+    );
   }
   scripts = rewriteScripts(fileName, scripts);
 
