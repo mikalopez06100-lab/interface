@@ -94,6 +94,7 @@ section{padding:clamp(64px,10vw,118px) 0;}
 .step .num::before{content:"0" counter(s);}
 .step h3{font-size:1.18rem;margin-bottom:4px;}
 .step p{font-size:.95rem;color:var(--muted);}
+.step p+p{margin-top:10px;}
 .method-img{position:relative;border-radius:3px;overflow:hidden;align-self:stretch;min-height:460px;}
 .method-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 @media(max-width:880px){.method-grid{grid-template-columns:1fr;gap:36px;}.method-img{min-height:340px;}}
@@ -123,21 +124,6 @@ section{padding:clamp(64px,10vw,118px) 0;}
 @media(max-width:780px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px;}.g-big{grid-row:span 2;}.g-wide{grid-column:span 2;}}
 .real-note{margin-top:22px;font-size:.86rem;color:var(--muted);font-style:italic;}
 
-/* pour qui */
-.fit{background:var(--cream);}
-.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-.fit-col{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:34px;}
-.fit-col.yes{border-top:3px solid var(--gold);}
-.fit-col.no{border-top:3px solid var(--muted);}
-.fit-col h3{font-size:1.3rem;margin-bottom:18px;}
-.fit-col ul{list-style:none;}
-.fit-col li{padding:9px 0 9px 28px;position:relative;font-size:.97rem;border-bottom:1px solid var(--line);}
-.fit-col li:last-child{border-bottom:none;}
-.fit-col li::before{position:absolute;left:0;top:9px;font-family:var(--serif);}
-.fit-col.yes li::before{content:"✓";color:var(--gold-2);}
-.fit-col.no li::before{content:"—";color:var(--muted);}
-@media(max-width:780px){.fit-grid{grid-template-columns:1fr;}}
-
 /* offre */
 .offer{background:var(--navy);color:var(--cream);}
 .offer-card{background:linear-gradient(160deg,var(--navy-2),var(--navy));border:1px solid rgba(193,154,91,.35);border-radius:4px;padding:clamp(34px,5vw,58px);max-width:760px;margin:0 auto;text-align:center;}
@@ -145,8 +131,6 @@ section{padding:clamp(64px,10vw,118px) 0;}
 .offer-card h2{color:var(--cream);font-size:clamp(1.8rem,3.6vw,2.8rem);margin:14px 0;}
 .offer-card h2 em{font-style:italic;color:var(--gold-soft);}
 .offer-card p{color:var(--cream);opacity:.85;max-width:54ch;margin:0 auto 14px;}
-.offer-price{font-family:var(--serif);font-size:1.05rem;color:var(--gold-soft);margin:22px 0 28px;}
-.offer-price b{font-size:1.5rem;}
 
 /* témoignage */
 .testi{background:var(--paper);}
@@ -210,7 +194,7 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
 @media(max-width:780px){.news-row{grid-template-columns:1fr;}}
 
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Pourquoi confier mon projet à un maître d'œuvre plutôt que gérer moi-même les artisans ?", "acceptedAnswer": {"@type": "Answer", "text": "Coordonner une dizaine de corps d'état, arbitrer des choix techniques, surveiller un budget et des délais représente un véritable second métier. Le maître d'œuvre porte cette charge à votre place, défend vos intérêts face aux entreprises et engage sa responsabilité sur la cohérence de l'ensemble. Sur un projet à fort enjeu, c'est la différence entre subir un chantier et le maîtriser."}}, {"@type": "Question", "name": "Quels types de projets InterFace pilote-t-il ?", "acceptedAnswer": {"@type": "Answer", "text": "InterFace accompagne la construction neuve, la rénovation lourde et les extensions ou surélévations, en béton, ossature bois ou structure métallique, avec deux niveaux d'engagement : hors d'eau hors d'air ou clé en main. L'approche reste la même : un interlocuteur unique, de la conception à la réception."}}, {"@type": "Question", "name": "Comment se déroule un projet, de la première prise de contact à la livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Le parcours se déroule en quatre temps : une étude de faisabilité pour cadrer le projet et le budget, une phase de conception et de chiffrage détaillé, le pilotage du chantier avec comptes-rendus réguliers, puis la réception et le suivi des réserves jusqu'à leur levée complète."}}, {"@type": "Question", "name": "Quel budget de travaux faut-il prévoir pour faire appel à InterFace ?", "acceptedAnswer": {"@type": "Answer", "text": "InterFace se concentre sur les projets d'envergure, généralement à partir de 300 000 € de travaux et jusqu'à 1,5 million d'euros. C'est sur ces projets que la valeur d'un pilotage rigoureux en maîtrise d'œuvre est la plus déterminante."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Pourquoi confier mon projet à un maître d'œuvre plutôt que gérer moi-même les artisans ?", "acceptedAnswer": {"@type": "Answer", "text": "Coordonner une dizaine de corps d'état, arbitrer des choix techniques, surveiller un budget et des délais représente un véritable second métier. Le maître d'œuvre porte cette charge à votre place, défend vos intérêts face aux entreprises et engage sa responsabilité sur la cohérence de l'ensemble. Sur un projet à fort enjeu, c'est la différence entre subir un chantier et le maîtriser."}}, {"@type": "Question", "name": "Quels types de projets InterFace pilote-t-il ?", "acceptedAnswer": {"@type": "Answer", "text": "InterFace accompagne la construction neuve, la rénovation lourde et les extensions ou surélévations, en béton, ossature bois ou structure métallique. Un interlocuteur unique, de la conception à la réception."}}, {"@type": "Question", "name": "Comment se déroule un projet, de la première prise de contact à la livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Le parcours se déroule en quatre temps : une étude de faisabilité (APS/APD), une phase de conception et de consultation (PRO/DCE/ACT), le pilotage des travaux (DET/OPC) avec reporting transparent, puis la réception et la levée des réserves (AOR)."}}, {"@type": "Question", "name": "Quel budget de travaux faut-il prévoir pour faire appel à InterFace ?", "acceptedAnswer": {"@type": "Answer", "text": "InterFace se concentre sur les projets d'envergure, généralement à partir de 300 000 € de travaux et jusqu'à 1,5 million d'euros. C'est sur ces projets que la valeur d'un pilotage rigoureux en maîtrise d'œuvre est la plus déterminante."}}]}</script>
 </head>
 <body>
 
@@ -232,12 +216,12 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="wrap">
-      <span class="kicker rv" style="color:var(--gold-soft);">Rénovation lourde & construction · Côte d'Azur</span>
-      <h1 class="rv" style="transition-delay:.1s;">Votre bien d'exception mérite un <em>maître d'œuvre</em>, pas un coordinateur de devis.</h1>
-      <p class="hero-sub rv" style="transition-delay:.2s;">Un seul interlocuteur, du premier chiffrage à la levée des réserves. Budget tenu, délais maîtrisés, valeur de votre bien protégée.</p>
+      <span class="kicker rv" style="color:var(--gold-soft);">Construction et Rénovation – Côte d'Azur et Var</span>
+      <h1 class="rv" style="transition-delay:.1s;">Transformer la complexité en <em>décisions claires</em></h1>
+      <p class="hero-sub rv" style="transition-delay:.2s;">Un interlocuteur unique pour éclairer les décisions, coordonner les intervenants et sécuriser l'exécution.</p>
       <div class="hero-cta rv" style="transition-delay:.3s;">
         <a href="#offre" class="btn btn-gold">Démarrer par une étude de faisabilité</a>
-        <a href="#realisations" class="btn btn-ghost">Voir un chantier</a>
+        <a href="pro-interface.html" class="btn btn-ghost">Découvrir InterFace Pro</a>
       </div>
     </div>
   </div>
@@ -247,10 +231,9 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
 <!-- ============ STRIP ============ -->
 <div class="strip">
   <div class="wrap strip-grid">
-    <div class="strip-item"><b>20 ans</b><span>d'expérience immobilière & BTP</span></div>
-    <div class="strip-item"><b>1 seul</b><span>interlocuteur de A à Z</span></div>
-    <div class="strip-item"><b>300 K€&ndash;1,5 M€</b><span>budgets de travaux pilotés</span></div>
-    <div class="strip-item"><b>06 · Monaco</b><span>Nice, Cannes, arrière-pays</span></div>
+    <div class="strip-item"><b>23 ans</b><span>d'expérience</span></div>
+    <div class="strip-item"><b>1 seul</b><span>intervenant</span></div>
+    <div class="strip-item"><b>06–Monaco–Var</b></div>
   </div>
 </div>
 
@@ -276,14 +259,14 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
     <div class="method-grid">
       <div>
         <div class="sec-head rv" style="margin-bottom:30px;">
-          <span class="kicker">La méthode InterFace</span>
+          <span class="kicker">La méthode InterFace AMO et MOEX</span>
           <h2>Du chiffrage à la remise des clés, une trajectoire maîtrisée.</h2>
         </div>
         <div class="method-steps">
-          <div class="step rv"><span class="num"></span><div><h3>Étude de faisabilité</h3><p>Analyse du bien, du projet et de l'enveloppe budgétaire réaliste. Vous savez où vous allez avant d'engager.</p></div></div>
-          <div class="step rv"><span class="num"></span><div><h3>Conception & chiffrage</h3><p>Définition technique, sélection des artisans, consultation et chiffrage détaillé. Aucune zone d'ombre.</p></div></div>
-          <div class="step rv"><span class="num"></span><div><h3>Pilotage du chantier</h3><p>Coordination des corps d'état, comptes-rendus de visite réguliers, contrôle du budget et des délais.</p></div></div>
-          <div class="step rv"><span class="num"></span><div><h3>Réception & levée des réserves</h3><p>Réception rigoureuse, suivi de chaque réserve jusqu'à sa levée. Le chantier n'est clos que lorsqu'il est parfait.</p></div></div>
+          <div class="step rv"><span class="num"></span><div><h3>Étude de faisabilité</h3><p>Analyse du bien, des contraintes réglementaires, des enjeux techniques, environnementaux et de sécurité, ainsi que de l'enveloppe budgétaire prévisionnelle.</p><p>À travers les phases d'Avant-Projet Sommaire (APS) puis d'Avant-Projet Détaillé (APD), nous définissons et affinons les solutions architecturales et techniques afin de préciser les coûts et sécuriser les choix avant le lancement opérationnel du projet.</p></div></div>
+          <div class="step rv"><span class="num"></span><div><h3>Conception & consultation</h3><p>Finalisation des études techniques et architecturales (PRO), préparation des dossiers de consultation des entreprises (DCE) et analyse des offres.</p><p>Nous accompagnons la sélection des entreprises et la passation des marchés de travaux (ACT) afin de sécuriser les conditions techniques, financières et opérationnelles du projet avant son lancement.</p></div></div>
+          <div class="step rv"><span class="num"></span><div><h3>Pilotage des travaux</h3><p>Contrôle de l'exécution des travaux (DET), coordination des intervenants et pilotage du chantier.</p><p>Ordonnancement, suivi du planning et coordination des entreprises (OPC) assurent la bonne synchronisation des opérations.</p><p>Budget, délais et points de vigilance font l'objet d'un suivi régulier et d'un reporting transparent.</p></div></div>
+          <div class="step rv"><span class="num"></span><div><h3>Réception & levée des réserves</h3><p>Organisation des opérations de réception (AOR), vérification de la conformité des ouvrages et identification des éventuelles réserves.</p><p>Leur traitement est suivi jusqu'à leur levée afin de garantir une livraison conforme aux engagements du projet.</p></div></div>
         </div>
       </div>
       <div class="method-img rv"><img src="/images/extracted/landing-interface-pilotage-de-chantier-charpente-d-une-maison-sur-la-cote-d-azur-5a963e76b617.jpg" alt="Pilotage de chantier — charpente d'une maison sur la Côte d'Azur"></div>
@@ -296,21 +279,15 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
 <section class="offer-summary" id="offre-resume">
   <div class="wrap">
     <div class="sec-head rv" style="margin-left:auto;margin-right:auto;text-align:center;">
-      <span class="kicker">Ce que nous pilotons</span>
-      <h2>Un seul interlocuteur, pour tous vos projets.</h2>
-      <p style="margin-left:auto;margin-right:auto;">Construction neuve, rénovation lourde, extension ou surélévation : InterFace porte votre projet de la conception à la remise des clés.</p>
+      <h2>Un pilotage unique pour des projets exigeants</h2>
+      <p style="margin-left:auto;margin-right:auto;">Nous accompagnons particuliers, architectes, promoteurs et professionnels de l'immobilier dans la réalisation de constructions neuves, rénovations complexes, extensions et surélévations.</p>
     </div>
     <div class="os-grid">
-      <div class="os-card rv"><h3>Construction neuve</h3><p>Votre maison ou villa, de la conception à la livraison, avec un budget maîtrisé sur toute la durée.</p></div>
-      <div class="os-card rv" style="transition-delay:.1s;"><h3>Rénovation lourde</h3><p>Restructuration complète d'un bien existant : structure, redistribution, mise aux normes, finitions.</p></div>
-      <div class="os-card rv" style="transition-delay:.2s;"><h3>Extension & surélévation</h3><p>Gagner de la surface ou un niveau, en maîtrisant structure existante et règles d'urbanisme.</p></div>
+      <div class="os-card rv"><h3>Construction neuve</h3><p>Conception et réalisation de villas, logements collectifs et bâtiments tertiaires, de l'étude initiale à la livraison.</p></div>
+      <div class="os-card rv" style="transition-delay:.1s;"><h3>Rénovation lourde</h3><p>Restructuration complète, réhabilitation et mise aux normes d'actifs existants dans des contextes techniques exigeants.</p></div>
+      <div class="os-card rv" style="transition-delay:.2s;"><h3>Extension & surélévation</h3><p>Création de surfaces nouvelles en intégrant les contraintes structurelles, réglementaires et urbaines du site.</p></div>
     </div>
-    <p class="center" style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);margin-bottom:12px;">Deux niveaux d'engagement</p>
-    <div class="os-levels">
-      <div class="os-pill"><b>Hors d'eau hors d'air</b> — le bâti clos et couvert</div>
-      <div class="os-pill"><b>Clé en main</b> — la tranquillité totale</div>
-    </div>
-    <p class="os-modes">Quel que soit le système constructif adapté à votre projet — <b>béton</b>, <b>ossature bois</b> ou <b>métal</b> — nous le maîtrisons et vous conseillons objectivement.</p>
+    <p class="os-modes">Chaque projet appelle une réponse constructive spécifique. Béton, bois ou métal : nous vous conseillons en toute indépendance pour retenir la solution la plus pertinente.</p>
     <div class="center"><a href="offre-interface.html" class="btn btn-dark rv">Découvrir l'offre en détail</a></div>
   </div>
 </section>
@@ -322,14 +299,10 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
       <div class="founder-photo rv"><img src="/images/extracted/landing-interface-olivier-colombani-fondateur-d-interface-242503ae1932.jpg" alt="Olivier Colombani, fondateur d'InterFace"></div>
       <div class="rv" style="transition-delay:.1s;">
         <span class="kicker">Le fondateur</span>
-        <h2 style="margin-top:14px;">Un œil d'investisseur, <em>une main de bâtisseur.</em></h2>
-        <p>Vingt ans dans l'immobilier — transaction, valeur vénale, VEFA — et une vie de chantier héritée d'une famille de promoteurs. Olivier Colombani ne pilote pas seulement des travaux : il raisonne chaque décision en fonction de la valeur de votre bien.</p>
-        <p>Expert certifié en valeur vénale et en pathologie du bâtiment, il sait lire un bien comme peu savent le faire : ce qu'il vaut, ce qui le menace, et ce qu'on peut légalement en faire. C'est cette triple culture — technique, immobilière et réglementaire — qui fait toute la différence sur un projet à enjeu.</p>
-        <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
-          <span style="display:inline-block;border:1px solid rgba(193,154,91,.5);color:var(--gold-soft);font-size:.78rem;letter-spacing:.04em;padding:8px 14px;border-radius:2px;">◆ Expert certifié en valeur vénale</span>
-          <span style="display:inline-block;border:1px solid rgba(193,154,91,.5);color:var(--gold-soft);font-size:.78rem;letter-spacing:.04em;padding:8px 14px;border-radius:2px;">◆ Expert certifié en pathologie du bâtiment</span>
-          <span style="display:inline-block;border:1px solid rgba(193,154,91,.5);color:var(--gold-soft);font-size:.78rem;letter-spacing:.04em;padding:8px 14px;border-radius:2px;">◆ Spécialiste urbanisme & étude de PLU</span>
-        </div>
+        <h2 style="margin-top:14px;">Une culture du chantier, <em>une vision de promoteur.</em></h2>
+        <p>J'ai grandi dans l'univers de la construction de villas et de la promotion immobilière avant de me former à la conduite de travaux. Depuis plus de vingt ans, mon parcours m'a conduit à intervenir aussi bien sur le terrain qu'à toutes les étapes de la valorisation d'un actif immobilier.</p>
+        <p>Cette expérience me permet d'appréhender chaque projet dans sa globalité : faisabilité réglementaire, urbanisme, contraintes techniques, maîtrise des coûts, qualité d'exécution et potentiel de valorisation.</p>
+        <p>Au-delà du chantier, chaque décision est prise en tenant compte de son impact sur la pérennité et la valeur du bien.</p>
         <div class="sign">Olivier Colombani<small>Fondateur — InterFace</small></div>
       </div>
     </div>
@@ -381,36 +354,6 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
   </div>
 </section>
 
-<!-- ============ POUR QUI ============ -->
-<section class="fit">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="kicker">Travaillons-nous ensemble ?</span>
-      <h2>InterFace n'est pas pour tout le monde — et c'est assumé.</h2>
-    </div>
-    <div class="fit-grid">
-      <div class="fit-col yes rv">
-        <h3>Pour vous si…</h3>
-        <ul>
-          <li>Vous rénovez ou construisez un bien de valeur (300 K€ à 1,5 M€ de travaux)</li>
-          <li>Vous voulez un interlocuteur unique, pas une dizaine d'artisans à gérer</li>
-          <li>La sérénité et la qualité comptent plus que le devis le moins cher</li>
-          <li>Vous attendez de la transparence sur le budget et l'avancement</li>
-        </ul>
-      </div>
-      <div class="fit-col no rv" style="transition-delay:.1s;">
-        <h3>Pas pour vous si…</h3>
-        <ul>
-          <li>Vous cherchez uniquement le prix le plus bas, coûte que coûte</li>
-          <li>Vous préférez coordonner vous-même vos artisans</li>
-          <li>Votre projet est un rafraîchissement léger (peinture, sols seuls)</li>
-          <li>Vous voulez démarrer sans cadrage ni chiffrage préalable</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ OFFRE ============ -->
 <section class="offer" id="offre">
   <div class="wrap">
@@ -418,8 +361,7 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
       <span class="kicker">Le premier pas</span>
       <h2>Commencez par une <em>étude de faisabilité.</em></h2>
       <p>Avant tout engagement, une mission courte pour cadrer votre projet : analyse du bien, faisabilité technique, estimation réaliste de l'enveloppe de travaux. Vous repartez avec une vision claire — et la certitude de travailler avec le bon partenaire.</p>
-      <div class="offer-price"><b>À partir de 1 500 €</b><br>déductibles de vos honoraires si la mission se poursuit</div>
-      <a href="#contact" class="btn btn-gold">Demander mon étude de faisabilité</a>
+      <a href="#contact" class="btn btn-gold" style="margin-top:28px;">Demander mon étude de faisabilité</a>
     </div>
   </div>
 </section>
@@ -439,7 +381,7 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="sec-head rv"><span class="kicker">Questions fréquentes</span><h2>Vos questions, nos réponses.</h2><p>L'essentiel pour comprendre comment travaille un maître d'œuvre et ce qu'InterFace peut faire pour votre projet.</p></div>
-    <div class="faq-list"><div class="faq-item rv"><button class="faq-q">Pourquoi confier mon projet à un maître d'œuvre plutôt que gérer moi-même les artisans ?</button><div class="faq-a"><p>Coordonner une dizaine de corps d'état, arbitrer des choix techniques, surveiller un budget et des délais représente un véritable second métier. Le maître d'œuvre porte cette charge à votre place, défend vos intérêts face aux entreprises et engage sa responsabilité sur la cohérence de l'ensemble. Sur un projet à fort enjeu, c'est la différence entre subir un chantier et le maîtriser.</p></div></div><div class="faq-item rv"><button class="faq-q">Quels types de projets InterFace pilote-t-il ?</button><div class="faq-a"><p>InterFace accompagne la construction neuve, la rénovation lourde et les extensions ou surélévations, en béton, ossature bois ou structure métallique, avec deux niveaux d'engagement : hors d'eau hors d'air ou clé en main. L'approche reste la même : un interlocuteur unique, de la conception à la réception.</p></div></div><div class="faq-item rv"><button class="faq-q">Comment se déroule un projet, de la première prise de contact à la livraison ?</button><div class="faq-a"><p>Le parcours se déroule en quatre temps : une étude de faisabilité pour cadrer le projet et le budget, une phase de conception et de chiffrage détaillé, le pilotage du chantier avec comptes-rendus réguliers, puis la réception et le suivi des réserves jusqu'à leur levée complète.</p></div></div><div class="faq-item rv"><button class="faq-q">Quel budget de travaux faut-il prévoir pour faire appel à InterFace ?</button><div class="faq-a"><p>InterFace se concentre sur les projets d'envergure, généralement à partir de 300 000 € de travaux et jusqu'à 1,5 million d'euros. C'est sur ces projets que la valeur d'un pilotage rigoureux en maîtrise d'œuvre est la plus déterminante.</p></div></div></div>
+    <div class="faq-list"><div class="faq-item rv"><button class="faq-q">Pourquoi confier mon projet à un maître d'œuvre plutôt que gérer moi-même les artisans ?</button><div class="faq-a"><p>Coordonner une dizaine de corps d'état, arbitrer des choix techniques, surveiller un budget et des délais représente un véritable second métier. Le maître d'œuvre porte cette charge à votre place, défend vos intérêts face aux entreprises et engage sa responsabilité sur la cohérence de l'ensemble. Sur un projet à fort enjeu, c'est la différence entre subir un chantier et le maîtriser.</p></div></div><div class="faq-item rv"><button class="faq-q">Quels types de projets InterFace pilote-t-il ?</button><div class="faq-a"><p>InterFace accompagne la construction neuve, la rénovation lourde et les extensions ou surélévations, en béton, ossature bois ou structure métallique. Un interlocuteur unique, de la conception à la réception.</p></div></div><div class="faq-item rv"><button class="faq-q">Comment se déroule un projet, de la première prise de contact à la livraison ?</button><div class="faq-a"><p>Le parcours se déroule en quatre temps : une étude de faisabilité (APS/APD), une phase de conception et de consultation (PRO/DCE/ACT), le pilotage des travaux (DET/OPC) avec reporting transparent, puis la réception et la levée des réserves (AOR).</p></div></div><div class="faq-item rv"><button class="faq-q">Quel budget de travaux faut-il prévoir pour faire appel à InterFace ?</button><div class="faq-a"><p>InterFace se concentre sur les projets d'envergure, généralement à partir de 300 000 € de travaux et jusqu'à 1,5 million d'euros. C'est sur ces projets que la valeur d'un pilotage rigoureux en maîtrise d'œuvre est la plus déterminante.</p></div></div></div>
   </div>
 </section>
 
@@ -471,11 +413,13 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
         </select>
         <label>Budget de travaux envisagé</label>
         <select>
-          <option>300 - 500 K€</option>
-          <option>500 K€ - 1 M€</option>
-          <option>1 - 1,5 M€</option>
+          <option>Non précisé</option>
+          <option>200 – 400 K€</option>
+          <option>400 – 600 K€</option>
+          <option>600 – 800 K€</option>
+          <option>800 K€ – 1 M€</option>
+          <option>1 – 1,5 M€</option>
           <option>Plus de 1,5 M€</option>
-          <option>À définir</option>
         </select>
         <label>Décrivez votre bien &amp; votre projet</label>
         <textarea rows="3" placeholder="Localisation, type de bien, ce que vous souhaitez réaliser…"></textarea>
@@ -483,16 +427,6 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
         <p class="form-note">Réponse sous 48 h ouvrées. Vos informations restent strictement confidentielles.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- TEASER PRO -->
-<section style="background:var(--navy);color:var(--cream);text-align:center;padding:clamp(50px,7vw,80px) 0;border-top:1px solid rgba(193,154,91,.25);">
-  <div class="wrap-narrow">
-    <span class="kicker rv" style="color:var(--gold);">Vous êtes un professionnel ?</span>
-    <h2 class="rv" style="color:var(--cream);font-size:clamp(1.6rem,3vw,2.3rem);margin:12px 0 14px;">Promoteurs, marchands de biens, architectes.</h2>
-    <p class="rv" style="opacity:.85;max-width:50ch;margin:0 auto 24px;">Étude de PLU, expertise en valeur vénale et pathologie du bâtiment, maîtrise d'œuvre d'exécution : sécurisez vos opérations dès l'amont.</p>
-    <a href="pro-interface.html" class="btn btn-gold rv">Découvrir InterFace Pro</a>
   </div>
 </section>
 
