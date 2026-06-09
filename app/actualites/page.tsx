@@ -1,8 +1,11 @@
 import Link from "next/link";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export default function ActualitesPage() {
   return (
-    <main style={{ padding: "4rem 1.5rem", maxWidth: 1120, margin: "0 auto" }}>
+    <>
+      <SiteHeader />
+      <main style={{ padding: "4rem 1.5rem", maxWidth: 1120, margin: "0 auto" }}>
       <h1 style={{ fontSize: "2.2rem", marginBottom: "2rem" }}>Actualites</h1>
       <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))" }}>
         <article style={{ border: "1px solid #dcd3c2", background: "#fbf8f1", padding: "1.2rem" }}>
@@ -24,5 +27,6 @@ export default function ActualitesPage() {
         </article>
       </div>
     </main>
+    </>
   );
 }

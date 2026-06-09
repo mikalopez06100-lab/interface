@@ -9,6 +9,7 @@ import {
   MULT_STANDING,
   MULT_ZONE,
 } from "@/config/estimation";
+import { injectBrandAssets } from "@/lib/brand";
 import { appendSiteUxScript } from "@/lib/site-ux";
 
 const ROOT = process.cwd();
@@ -195,6 +196,7 @@ export const loadStaticHtmlDocument = async (
     /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi
   );
   let bodyHtml = rewriteLinks(extractOne(raw, /<body[^>]*>([\s\S]*?)<\/body>/i));
+  bodyHtml = injectBrandAssets(bodyHtml);
   bodyHtml = injectFaqNavLink(bodyHtml, fileName);
   if (fileName === "landing-interface.html") {
     bodyHtml = injectContactFormEnhancements(bodyHtml);

@@ -17,8 +17,17 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.brand,
-  description: "Site InterFace",
+  title: {
+    default: `${siteConfig.brand} — ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.brand}`,
+  },
+  description:
+    "Maîtrise d'œuvre, construction et rénovation sur la Côte d'Azur et le Var. Un interlocuteur unique de l'étude de faisabilité à la livraison.",
+  icons: {
+    icon: [{ url: siteConfig.assets.favicon, type: "image/png" }],
+    apple: [{ url: siteConfig.assets.favicon, type: "image/png" }],
+    shortcut: [siteConfig.assets.favicon],
+  },
 };
 
 export default function RootLayout({

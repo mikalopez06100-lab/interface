@@ -26,3 +26,69 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Pages React (actualités, légal) */
+.site-header {
+  background: #0a2540;
+  padding: 14px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 0 rgba(193, 154, 91, 0.25);
+}
+.site-header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.site-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.site-header-nav a {
+  color: #f6f1e7;
+  font-size: 0.84rem;
+  opacity: 0.85;
+}
+.site-header-nav a:hover {
+  opacity: 1;
+  color: #e8d9bf;
+}
+.site-header-cta {
+  border: 1px solid #c19a5b;
+  color: #c19a5b !important;
+  padding: 9px 18px;
+  border-radius: 2px;
+  opacity: 1 !important;
+}
+.brand-link {
+  display: inline-flex;
+  line-height: 0;
+}
+.brand-logo-nav {
+  height: clamp(38px, 9vw, 52px);
+  width: auto;
+  max-width: min(240px, 58vw);
+}
+.brand-logo-footer {
+  height: clamp(44px, 10vw, 58px);
+  width: auto;
+}
+.brand-logo-vertical {
+  height: clamp(72px, 16vw, 120px);
+  width: auto;
+}
+.brand-logo-symbol {
+  height: 40px;
+  width: auto;
+}
+@media (max-width: 720px) {
+  .site-header-nav a:not(.site-header-cta) {
+    display: none;
+  }
+}

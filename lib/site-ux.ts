@@ -9,6 +9,58 @@ export const SITE_UX_CSS = `
   outline-offset: 3px;
 }
 
+/* ——— Identité visuelle ——— */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 0;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.brand img,
+.foot-brand img {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+.brand-symbol {
+  height: clamp(32px, 8vw, 40px);
+  width: auto;
+}
+.brand-wordmark {
+  height: clamp(38px, 9vw, 52px);
+  width: auto;
+  max-width: min(240px, 58vw);
+}
+.foot-brand {
+  line-height: 0;
+}
+.foot-brand img {
+  height: clamp(44px, 10vw, 58px);
+  width: auto;
+  max-width: min(280px, 90vw);
+}
+.brand img[src*="logo-vertical"] {
+  height: clamp(72px, 16vw, 120px);
+  width: auto;
+  margin: 0 auto;
+}
+@media (min-width: 720px) {
+  .brand-symbol {
+    display: none;
+  }
+  .brand-wordmark {
+    max-width: 280px;
+  }
+}
+@media (max-width: 719px) {
+  .brand-wordmark {
+    display: none;
+  }
+}
+
 /* ——— Navigation mobile ——— */
 .nav-toggle {
   display: none;

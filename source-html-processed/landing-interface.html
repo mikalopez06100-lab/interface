@@ -113,7 +113,7 @@ section{padding:clamp(64px,10vw,118px) 0;}
 
 /* réalisations */
 .real{background:var(--paper);}
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:230px;gap:14px;}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:minmax(200px,230px);gap:14px;}
 .gphoto{position:relative;overflow:hidden;border-radius:3px;background:var(--cream-2);}
 .gphoto img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
 .gphoto:hover img{transform:scale(1.06);}
@@ -123,6 +123,10 @@ section{padding:clamp(64px,10vw,118px) 0;}
 .g-wide{grid-column:span 2;}
 @media(max-width:780px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px;}.g-big{grid-row:span 2;}.g-wide{grid-column:span 2;}}
 .real-note{margin-top:22px;font-size:.86rem;color:var(--muted);font-style:italic;}
+.real-project + .real-project{margin-top:clamp(48px,8vw,80px);padding-top:clamp(48px,8vw,80px);border-top:1px solid var(--line);}
+.real-project-head{margin-bottom:32px;}
+.real-project-head h3{font-family:var(--serif);font-size:clamp(1.45rem,3vw,2rem);color:var(--navy);margin-bottom:12px;}
+.real-project-head p{font-size:1.02rem;color:var(--muted);max-width:62ch;}
 
 /* offre */
 .offer{background:var(--navy);color:var(--cream);}
@@ -314,17 +318,41 @@ footer{background:var(--navy);color:var(--cream);padding:54px 0 30px;}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker">Réalisations</span>
-      <h2>Un chantier suivi, étape par étape.</h2>
-      <p>Maison ossature bois sur les hauteurs des Alpes-Maritimes — de la structure à la finition. La preuve qu'un chantier maîtrisé se reconnaît à chaque étape, pas seulement à la fin.</p>
+      <h2>Des chantiers pilotés de la structure à la livraison.</h2>
+      <p>Construction neuve, gros œuvre, ossature bois et finitions haut de gamme : quelques projets en cours ou récemment livrés sur la Côte d'Azur et en Var.</p>
     </div>
-    <div class="gallery">
-      <div class="gphoto g-big rv"><img src="/images/extracted/landing-interface-maison-ossature-bois-vue-d-ensemble-f45d5acd335d.jpg" alt="Maison ossature bois — vue d'ensemble"><div class="cap">Structure bois & enduit — façade sud</div></div>
-      <div class="gphoto rv" style="transition-delay:.05s;"><img src="/images/extracted/landing-interface-charpente-99d81e2f6b18.jpg" alt="Charpente"><div class="cap">Charpente traditionnelle</div></div>
-      <div class="gphoto rv" style="transition-delay:.1s;"><img src="/images/extracted/landing-interface-toiture-tuiles-2a6b6976aae0.jpg" alt="Toiture tuiles"><div class="cap">Couverture tuiles</div></div>
-      <div class="gphoto g-wide rv" style="transition-delay:.15s;"><img src="/images/extracted/landing-interface-vue-drone-du-chantier-f4312367b7b5.jpg" alt="Vue drone du chantier"><div class="cap">Vue d'ensemble — bardage bois & menuiseries alu</div></div>
-      <div class="gphoto rv" style="transition-delay:.2s;"><img src="/images/extracted/landing-interface-maison-en-fin-de-chantier-37f64be6d49e.jpg" alt="Maison en fin de chantier"><div class="cap">Fin de gros œuvre</div></div>
-    </div>
-    <p class="real-note">Chantier de maîtrise d'œuvre suivi par Olivier Colombani — Alpes-Maritimes (06). <span class="todo">[À compléter : commune, année, surface, budget travaux]</span></p>
+
+    <article class="real-project rv">
+      <div class="real-project-head">
+        <h3>Villa 800&nbsp;m² — Villeneuve-Loubet</h3>
+        <p>Construction neuve en cours : gros œuvre, parements en pierre naturelle, aménagements d'exception et volumes ouverts sur la Méditerranée.</p>
+      </div>
+      <div class="gallery">
+        <div class="gphoto g-big"><img src="/images/realisations/villeneuve-loubet/01-facade-pierre-vue-mer.jpg" alt="Villa en construction — façade en pierre et vue mer"><div class="cap">Façade en pierre — vue sur la Baie des Anges</div></div>
+        <div class="gphoto"><img src="/images/realisations/villeneuve-loubet/03-mur-pierre-portail.jpg" alt="Mur en pierre sèche — portail d'entrée"><div class="cap">Parement pierre sèche — entrée monumentale</div></div>
+        <div class="gphoto"><img src="/images/realisations/villeneuve-loubet/04-piscine-interieure.jpg" alt="Piscine intérieure et mur végétal"><div class="cap">Piscine intérieure & mur végétal</div></div>
+        <div class="gphoto g-wide"><img src="/images/realisations/villeneuve-loubet/02-parement-pierre-panorama.jpg" alt="Parement en pierre naturelle — terrasse et panorama"><div class="cap">Parement pierre — terrasse et panorama côtier</div></div>
+        <div class="gphoto"><img src="/images/realisations/villeneuve-loubet/05-salon-baies-mer.jpg" alt="Grand salon — baies vitrées vue mer"><div class="cap">Volumes intérieurs — baies vitrées vue mer</div></div>
+        <div class="gphoto"><img src="/images/realisations/villeneuve-loubet/06-gros-oeuvre-beton.jpg" alt="Gros œuvre béton — structure du bâtiment"><div class="cap">Gros œuvre béton — structure du bâtiment</div></div>
+      </div>
+      <p class="real-note">Chantier en cours — maîtrise d'œuvre par Olivier Colombani · Villeneuve-Loubet (06) · 800&nbsp;m² · construction neuve</p>
+    </article>
+
+    <article class="real-project rv" style="transition-delay:.1s;">
+      <div class="real-project-head">
+        <h3>Villa — Saint-Tropez</h3>
+        <p>Construction neuve mêlant béton et ossature bois : charpente, pergola en bois, couverture tuiles et enveloppe contemporaine aux lignes méditerranéennes.</p>
+      </div>
+      <div class="gallery">
+        <div class="gphoto g-big"><img src="/images/realisations/saint-tropez/01-facade-pergola.jpg" alt="Villa neuve — façade et pergola bois"><div class="cap">Façade achevée — pergola bois & tuiles canal</div></div>
+        <div class="gphoto"><img src="/images/realisations/saint-tropez/02-charpente-fermettes.jpg" alt="Montage des fermettes de toiture"><div class="cap">Ossature bois — montage des fermettes</div></div>
+        <div class="gphoto"><img src="/images/realisations/saint-tropez/03-ossature-bois-toiture.jpg" alt="Structure bois et préparation couverture"><div class="cap">Charpente bois — préparation de la couverture</div></div>
+        <div class="gphoto g-wide"><img src="/images/realisations/saint-tropez/04-coffrage-beton.jpg" alt="Coffrage et coulage béton"><div class="cap">Gros œuvre béton — coffrage et étaiement</div></div>
+        <div class="gphoto"><img src="/images/realisations/saint-tropez/05-structure-mixte.jpg" alt="Structure mixte béton et ossature bois"><div class="cap">Structure mixte — béton & ossature bois</div></div>
+        <div class="gphoto"><img src="/images/realisations/saint-tropez/06-fondations-beton.jpg" alt="Fondations et dallage béton"><div class="cap">Fondations — dallage et ferraillage</div></div>
+      </div>
+      <p class="real-note">Chantier en cours — maîtrise d'œuvre par Olivier Colombani · Saint-Tropez (83) · construction neuve · mix béton / ossature bois</p>
+    </article>
   </div>
 </section>
 

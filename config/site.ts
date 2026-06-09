@@ -1,8 +1,17 @@
 export const siteConfig = {
-  brand: "InterFace",
+  brand: "Inter|Face",
+  tagline: "Maîtrise d'œuvre — Côte d'Azur",
   legalName: "InterFace",
   city: "Nice",
   serviceArea: ["Alpes-Maritimes", "Monaco"],
+  assets: {
+    favicon: "/brand/favicon.png",
+    horizontal: "/brand/logo-horizontal.png",
+    vertical: "/brand/logo-vertical.png",
+    symbolNegative: "/brand/logo-symbole-negatif.png",
+    symbolPositive: "/brand/logo-symbole-positif.png",
+    symbolMonochrome: "/brand/logo-symbole-monochrome.png",
+  },
   placeholders: {
     phone: "[téléphone à compléter]",
     email: "[email professionnel à compléter]",
@@ -16,3 +25,5 @@ export const siteConfig = {
     articleDate: "[date de publication à compléter]",
   },
 } as const;
+
+export const brandAlt = `${siteConfig.brand} — ${siteConfig.tagline}`;
