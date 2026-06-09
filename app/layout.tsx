@@ -3,6 +3,7 @@ import { Fraunces, Instrument_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import { NAV_DRAWER_CSS } from "@/lib/site-ux";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${fraunces.variable} ${instrumentSans.variable}`}>
+        <style dangerouslySetInnerHTML={{ __html: NAV_DRAWER_CSS }} />
         <Script
           id="localbusiness-jsonld"
           type="application/ld+json"

@@ -7,7 +7,9 @@ export const siteConfig = {
   assets: {
     favicon: "/brand/favicon.png",
     horizontal: "/brand/logo-horizontal.png",
+    horizontalLight: "/brand/logo-horizontal-light.png",
     vertical: "/brand/logo-vertical.png",
+    verticalLight: "/brand/logo-vertical-light.png",
     symbolNegative: "/brand/logo-symbole-negatif.png",
     symbolPositive: "/brand/logo-symbole-positif.png",
     symbolMonochrome: "/brand/logo-symbole-monochrome.png",

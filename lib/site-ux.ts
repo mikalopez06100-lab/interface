@@ -1,3 +1,155 @@
+export const NAV_DRAWER_CSS = `
+/* ——— Bandeau & menu déployable ——— */
+.nav,
+.site-header-inner {
+  padding: 12px 24px;
+}
+.nav.scrolled {
+  padding: 10px 24px;
+}
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 2px 6px 10px;
+  z-index: 60;
+  flex-shrink: 0;
+}
+.nav-toggle::after {
+  content: "Menu";
+  font-family: var(--sans, var(--font-instrument-sans), sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream, #f6f1e7);
+}
+.nav.open .nav-toggle::after {
+  content: "Fermer";
+}
+.nav-toggle-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+.nav-toggle-bars span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream, #f6f1e7);
+  margin: 4px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav.open .nav-toggle-bars span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav.open .nav-toggle-bars span:nth-child(2) {
+  opacity: 0;
+}
+.nav.open .nav-toggle-bars span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.5);
+  z-index: 48;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.nav.open .nav-overlay,
+.nav-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-links,
+.site-nav-drawer {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(400px, 92vw);
+  background: rgba(10, 37, 64, 0.98);
+  backdrop-filter: blur(12px);
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  padding: 80px 36px 40px !important;
+  gap: 0 !important;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 55;
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.3);
+  list-style: none;
+}
+.nav.open .nav-links,
+.nav.open .site-nav-drawer {
+  transform: translateX(0);
+}
+.nav-links::before,
+.site-nav-drawer::before {
+  content: "Navigation";
+  display: block;
+  font-family: var(--sans, var(--font-instrument-sans), sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold, #c19a5b);
+  margin-bottom: 28px;
+}
+.nav-links a,
+.site-nav-drawer a {
+  display: block !important;
+  font-family: var(--serif, var(--font-fraunces), Georgia, serif) !important;
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  color: var(--cream, #f6f1e7) !important;
+  opacity: 1 !important;
+  letter-spacing: 0.01em !important;
+  padding: 18px 0 !important;
+  border-bottom: 1px solid rgba(246, 241, 231, 0.12);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.nav-links a:hover,
+.nav-links a.active,
+.site-nav-drawer a:hover {
+  color: var(--gold, #c19a5b) !important;
+  padding-left: 6px !important;
+}
+.nav-links .nav-cta,
+.site-nav-drawer .nav-cta,
+.site-nav-drawer .site-header-cta {
+  margin-top: 28px;
+  text-align: center;
+  font-family: var(--sans, var(--font-instrument-sans), sans-serif) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase;
+  padding: 16px 24px !important;
+  border: 1px solid var(--gold, #c19a5b) !important;
+  border-radius: 2px;
+  color: var(--gold, #c19a5b) !important;
+}
+.nav-links .nav-cta:hover,
+.site-nav-drawer .nav-cta:hover,
+.site-nav-drawer .site-header-cta:hover {
+  background: var(--gold, #c19a5b);
+  color: var(--navy, #0a2540) !important;
+  padding-left: 24px !important;
+}
+`;
+
 export const SITE_UX_CSS = `
 :root {
   --serif: var(--font-fraunces), Georgia, serif;
@@ -25,14 +177,10 @@ export const SITE_UX_CSS = `
   width: auto;
   max-width: 100%;
 }
-.brand-symbol {
-  height: clamp(32px, 8vw, 40px);
-  width: auto;
-}
 .brand-wordmark {
-  height: clamp(38px, 9vw, 52px);
+  height: clamp(32px, 7vw, 44px);
   width: auto;
-  max-width: min(240px, 58vw);
+  max-width: min(220px, 52vw);
 }
 .foot-brand {
   line-height: 0;
@@ -47,107 +195,13 @@ export const SITE_UX_CSS = `
   width: auto;
   margin: 0 auto;
 }
-@media (min-width: 720px) {
-  .brand-symbol {
-    display: none;
-  }
-  .brand-wordmark {
-    max-width: 280px;
-  }
-}
-@media (max-width: 719px) {
-  .brand-wordmark {
-    display: none;
-  }
-}
-
-/* ——— Navigation mobile ——— */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 6px;
-  z-index: 60;
-}
-.nav-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--cream, #f6f1e7);
-  margin: 5px 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.nav-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 37, 64, 0.45);
-  z-index: 48;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.nav.open .nav-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-.nav.open .nav-toggle span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav.open .nav-toggle span:nth-child(2) {
-  opacity: 0;
-}
-.nav.open .nav-toggle span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-@media (max-width: 900px) {
-  .nav-toggle {
-    display: block;
-  }
-  .nav-links {
-    position: fixed !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: min(320px, 88vw);
-    background: rgba(10, 37, 64, 0.98);
-    backdrop-filter: blur(10px);
-    flex-direction: column !important;
-    align-items: stretch !important;
-    padding: 88px 28px 32px !important;
-    gap: 0 !important;
-    transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 55;
-    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.25);
-  }
-  .nav.open .nav-links {
-    transform: translateX(0);
-  }
-  .nav-links a:not(.nav-cta) {
-    display: block !important;
-    padding: 16px 0 !important;
-    border-bottom: 1px solid rgba(246, 241, 231, 0.1);
-    font-size: 1rem !important;
-  }
-  .nav-links .nav-cta {
-    margin-top: 20px;
-    text-align: center;
-    padding: 14px 18px !important;
-  }
-  .nav-overlay {
-    display: block;
-  }
-}
-
 /* ——— Ancres & sections ——— */
 #faq,
 #contact,
 #offre,
 #realisations,
 #actualites {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 72px;
 }
 
 /* ——— FAQ ——— */
@@ -281,7 +335,7 @@ export const SITE_UX_SCRIPT = `
     toggle.className='nav-toggle';
     toggle.setAttribute('aria-label','Ouvrir le menu');
     toggle.setAttribute('aria-expanded','false');
-    toggle.innerHTML='<span></span><span></span><span></span>';
+    toggle.innerHTML='<span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>';
     var overlay=document.createElement('div');
     overlay.className='nav-overlay';
     overlay.setAttribute('aria-hidden','true');

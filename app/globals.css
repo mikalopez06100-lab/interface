@@ -30,7 +30,7 @@ a {
 /* Pages React (actualités, légal) */
 .site-header {
   background: #0a2540;
-  padding: 14px 28px;
+  padding: 10px 24px;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -44,36 +44,14 @@ a {
   justify-content: space-between;
   gap: 20px;
 }
-.site-header-nav {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.site-header-nav a {
-  color: #f6f1e7;
-  font-size: 0.84rem;
-  opacity: 0.85;
-}
-.site-header-nav a:hover {
-  opacity: 1;
-  color: #e8d9bf;
-}
-.site-header-cta {
-  border: 1px solid #c19a5b;
-  color: #c19a5b !important;
-  padding: 9px 18px;
-  border-radius: 2px;
-  opacity: 1 !important;
-}
 .brand-link {
   display: inline-flex;
   line-height: 0;
 }
 .brand-logo-nav {
-  height: clamp(38px, 9vw, 52px);
+  height: clamp(32px, 7vw, 44px);
   width: auto;
-  max-width: min(240px, 58vw);
+  max-width: min(220px, 52vw);
 }
 .brand-logo-footer {
   height: clamp(44px, 10vw, 58px);
@@ -86,9 +64,4 @@ a {
 .brand-logo-symbol {
   height: 40px;
   width: auto;
-}
-@media (max-width: 720px) {
-  .site-header-nav a:not(.site-header-cta) {
-    display: none;
-  }
 }

@@ -24,7 +24,9 @@ export function BrandLogo({ variant = "nav", href = "/", priority = false }: Pro
       ? siteConfig.assets.vertical
       : variant === "symbol"
         ? siteConfig.assets.symbolNegative
-        : siteConfig.assets.horizontal;
+        : variant === "nav"
+          ? siteConfig.assets.horizontalLight
+          : siteConfig.assets.horizontal;
 
   const image = (
     <Image
