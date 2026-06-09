@@ -4,6 +4,11 @@ export const siteConfig = {
   legalName: "InterFace",
   city: "Nice",
   serviceArea: ["Alpes-Maritimes", "Monaco"],
+  contact: {
+    email: "contact@interface-moe.com",
+    phone: "06 11 27 19 19",
+    phoneTel: "+33611271919",
+  },
   assets: {
     favicon: "/brand/favicon.png",
     horizontal: "/brand/logo-horizontal.png",
@@ -15,8 +20,8 @@ export const siteConfig = {
     symbolMonochrome: "/brand/logo-symbole-monochrome.png",
   },
   placeholders: {
-    phone: "[téléphone à compléter]",
-    email: "[email professionnel à compléter]",
+    phone: "06 11 27 19 19",
+    email: "contact@interface-moe.com",
     address: "[adresse exacte à compléter]",
     siret: "[SIRET à compléter]",
     legalNotice: "[mentions légales à compléter]",

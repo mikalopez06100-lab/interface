@@ -42,8 +42,8 @@ export default function RootLayout({
     name: siteConfig.brand,
     areaServed: siteConfig.serviceArea,
     addressLocality: siteConfig.city,
-    telephone: siteConfig.placeholders.phone,
-    email: siteConfig.placeholders.email,
+    telephone: siteConfig.contact.phoneTel,
+    email: siteConfig.contact.email,
     address: siteConfig.placeholders.address,
   };
 

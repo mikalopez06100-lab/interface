@@ -11,6 +11,7 @@ import {
 } from "@/config/estimation";
 import { injectBrandAssets } from "@/lib/brand";
 import { appendSiteUxScript } from "@/lib/site-ux";
+import { siteConfig } from "@/config/site";
 
 const ROOT = process.cwd();
 const SOURCE_DIR = path.join(ROOT, "source-html-processed");
@@ -139,6 +140,23 @@ const faqNavTargets: Record<string, string> = {
   "article-interface.html": "article-interface.html#faq",
 };
 
+const injectContactInfo = (bodyHtml: string) => {
+  const { email, phone, phoneTel } = siteConfig.contact;
+  return bodyHtml
+    .replace(
+      /<div class="cinfo"><div class="l">Téléphone<\/div><div class="v"><span class="todo">\[À compléter\]<\/span><\/div><\/div>/,
+      `<div class="cinfo"><div class="l">Téléphone</div><div class="v"><a href="tel:${phoneTel}">${phone}</a></div></div>`
+    )
+    .replace(
+      /<div class="cinfo"><div class="l">Email<\/div><div class="v"><span class="todo">\[À compléter — adresse pro dédiée\]<\/span><\/div><\/div>/,
+      `<div class="cinfo"><div class="l">Email</div><div class="v"><a href="mailto:${email}">${email}</a></div></div>`
+    )
+    .replace(
+      /<p>Nice \(06100\)<\/p>\s*(<p class="todo" style="display:inline-block;">\[Assurances)/,
+      `<p>Nice (06100)</p><p><a href="tel:${phoneTel}">${phone}</a></p><p><a href="mailto:${email}">${email}</a></p>$1`
+    );
+};
+
 const injectFaqNavLink = (bodyHtml: string, fileName: string) => {
   if (bodyHtml.includes(">FAQ</a>")) return bodyHtml;
   const faqHref = faqNavTargets[fileName] ?? "landing-interface.html#faq";
@@ -197,6 +215,7 @@ export const loadStaticHtmlDocument = async (
   );
   let bodyHtml = rewriteLinks(extractOne(raw, /<body[^>]*>([\s\S]*?)<\/body>/i));
   bodyHtml = injectBrandAssets(bodyHtml);
+  bodyHtml = injectContactInfo(bodyHtml);
   bodyHtml = injectFaqNavLink(bodyHtml, fileName);
   if (fileName === "landing-interface.html") {
     bodyHtml = injectContactFormEnhancements(bodyHtml);
