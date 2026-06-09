@@ -96,6 +96,7 @@ const projects = [
       {
         src: "c__Users_ppmpc_AppData_Roaming_Cursor_User_workspaceStorage_6fbe03be795d84c19e70204b9227af9b_images_IMG_8044-ebfd2f7e-aea2-4b7d-9728-1442db321e89.png",
         out: "06-gros-oeuvre-beton.jpg",
+        rotate: 90,
       },
     ],
   },
